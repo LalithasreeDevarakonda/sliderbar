@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sidebar Menu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .sidebar {
+      transition: transform 0.3s ease;
+    }
+    .sidebar.hidden {
+      transform: translateX(-100%);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Sticky Internship Banner -->
+  <div class="sticky top-0 left-0 bg-green-600 text-white px-4 py-2 z-50">
+    <a href="#internship" class="font-bold hover:underline">📌 Apply for Internship</a>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar fixed top-0 left-0 w-64 h-full bg-blue-800 text-white p-5 hidden z-40">
+    <button onclick="toggleSidebar()" class="mb-4 text-white font-bold">✖ Close</button>
+    <ul class="space-y-4">
+      <li><a href="#internship" class="hover:underline">Internship Application</a></li>
+      <li><a href="#offer" class="hover:underline">Offer Letter Generation</a></li>
+      <li><a href="#verify" class="hover:underline">Certificate Verification</a></li>
+      <li><a href="#join" class="hover:underline">Join Our Team</a></li>
+      <li><a href="#contact" class="hover:underline">Contact Info</a></li>
+    </ul>
+  </div>
+
+  <!-- Hamburger Menu -->
+  <button onclick="toggleSidebar()" class="m-4 text-blue-800 text-2xl font-bold">
+    ☰ Menu
+  </button>
+
+  <!-- Main Content -->
+  <main class="p-6">
+    <h1 class="text-3xl font-semibold text-gray-700">Welcome to MITS Dashboard</h1>
+    <p class="mt-4 text-gray-600">Use the sidebar to navigate through options related to internships and services.</p>
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
